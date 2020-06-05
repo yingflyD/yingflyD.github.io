@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="一碗龙虾汤面, Yingfly Blog">
+    <meta name="keywords" content="阿里云配置oss部署hexo一, Yingfly Blog">
     <meta name="description" content="心中有你 . 四季花开">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>一碗龙虾汤面 | Yingfly Blog</title>
+    <title>阿里云配置oss部署hexo一 | Yingfly Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">一碗龙虾汤面</h1>
+                    <h1 class="description center-align post-title">阿里云配置oss部署hexo一</h1>
                 </div>
             </div>
         </div>
@@ -335,8 +335,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%99%BE%E6%B1%A4%E9%9D%A2/">
-                                <span class="chip bg-color">虾汤面</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -347,8 +347,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%99%BE%E6%B1%A4%E9%9D%A2/" class="post-category">
-                                虾汤面
+                            <a href="/categories/aliyun/" class="post-category">
+                                aliyun
                             </a>
                         
                     </div>
@@ -360,7 +360,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-25
+                    2020-06-05
                 </div>
                 
 
@@ -369,14 +369,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -391,11 +391,70 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h1 id="满满的一碗"><a href="#满满的一碗" class="headerlink" title="满满的一碗"></a>满满的一碗</h1><img src="https://gitee.com/pic_hexo/pic_hexo_001/raw/master/img/龙虾面 (3).jpg" alt="龙虾面 (1)" style="zoom:80%;" />
+                <h1 id="记一次部署Hexo到阿里云服务器的过程"><a href="#记一次部署Hexo到阿里云服务器的过程" class="headerlink" title="记一次部署Hexo到阿里云服务器的过程"></a>记一次部署Hexo到阿里云服务器的过程</h1><blockquote>
+<p><a href="https://www.jianshu.com/p/29216da82247" target="_blank" rel="noopener">https://www.jianshu.com/p/29216da82247</a>  </p>
+</blockquote>
+<blockquote>
+<p><a href="https://blog.csdn.net/wx_15323880413/article/details/104576799" target="_blank" rel="noopener">https://blog.csdn.net/wx_15323880413/article/details/104576799</a></p>
+</blockquote>
+<p>最近打算搭建一个教程网站，专门放我写的一些教程一类的文章，但是整天CRUD实在是太烦了，还是找点简单粗暴的办法为好。</p>
+<p>考虑到这个网站的更新频率会非常非常慢，所以打算用Hexo这个博客框架。毕竟纯静态的比较安全，Hexo也属于开箱即用的，比较适合这个网站。</p>
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>前期没什么要准备的，主要就是安装node和git这两个工具。</p>
+<p>这两个工具安装很简单，不同的平台也有不同的安装方法，这里就不再赘述了，大家自行安装就可以，网上也有很多教程。</p>
+<h1 id="本地部分"><a href="#本地部分" class="headerlink" title="本地部分"></a>本地部分</h1><h2 id="安装hexo-cli"><a href="#安装hexo-cli" class="headerlink" title="安装hexo-cli"></a>安装hexo-cli</h2><p>要使用Hexo，需要使用npm安装一个叫hexo-cli的工具。安装非常简单，有点类似于vue-cli的安装（毕竟都是node写的嘛）。在终端中执行：</p>
+<p><code>sudo npm install hexo-cli -g</code><br>安装完毕后使用<code>hexo</code>命令检查是否安装成功：</p>
+<p>出现上图的输出，就表示安装成功了。</p>
+<h2 id="建立本地文件夹"><a href="#建立本地文件夹" class="headerlink" title="建立本地文件夹"></a>建立本地文件夹</h2><p>有了<code>hexo-cli</code>之后，就可以建立一个文件夹作为本地文件的路径了。</p>
+<p>选一个自己喜欢的路径，cd过去，然后执行以下命令来初始化一个Hexo项目：</p>
+<p><code>hexo init wendev_tutorial</code><br><code>cd wendev_tutorial</code><br><code>sudo npm install</code><br>这样本地文件夹就建立好了，可以在本地文件夹进行编辑与预览了。</p>
+<h2 id="主题安装与配置"><a href="#主题安装与配置" class="headerlink" title="主题安装与配置"></a>主题安装与配置</h2><p>考虑到这个站点是一个教程网站，所以我选择了我认为最合适的主题：3-hexo。理由是这个主题可以清晰地列出所有分类的所有文章，而且阅读体验还挺不错的。给作者点个赞。</p>
+<h3 id="主题的安装："><a href="#主题的安装：" class="headerlink" title="主题的安装："></a>主题的安装：</h3><p><code>git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo</code><br>在<code>_config.yml</code>中配置（大概在第96行）：</p>
+<p><code>theme: 3-hexo</code><br>然后就可以启动了：</p>
+<p><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code><br>效果（主题已经过本人略微修改）：</p>
+<p><img src="https://gitee.com/pic_hexo/pic_hexo_001/raw/master/img/1.webp" alt="1"></p>
+<p>接下来把我以前写好的一些文章放进来：</p>
+<p>这样就可以部署上线了。</p>
+<h1 id="服务端部分"><a href="#服务端部分" class="headerlink" title="服务端部分"></a>服务端部分</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>如果服务器没有安装git的话，需要安装git。</p>
+<p>此外，因为我的服务器上正在跑着我的个人网站，它已经占用了80端口，要再加一个网站的话需要做反向代理，于是需要安装nginx。</p>
+<p>首先把我的个人网站的端口改成10000备用，把80端口空出来，然后安装Nginx：</p>
+<p><code>sudo yum -y install nginx</code><br><code>nginx # 启动nginx试一下</code></p>
+<h2 id="建立Git仓库"><a href="#建立Git仓库" class="headerlink" title="建立Git仓库"></a>建立Git仓库</h2><p>Hexo可以使用Git来部署，这样每次写完之后就都可以使用git来一键部署了，比较方便。</p>
+<p>注意：如果本地没有配置ssh，先配一个ssh。这里因为我已经有了，就不再配置了。</p>
+<p>开始前先切到root用户，然后执行：</p>
+<p><code>useradd git # 添加一个新用户</code><br><code>passwd git # 设置git用户密码</code><br><code>su git # 切换用户进行后续操作</code><br><code>cd /home/git/</code><br><code>mkdir -p projects/blog # 把项目目录建立起来</code><br><code>mkdir repos &amp;&amp; cd repos</code><br><code>git init --bare blog.git # 创建仓库</code><br><code>cd blog.git/hooks</code><br><code>vim post-receive # 创建一个钩子</code><br><code>post-receive</code>文件的内容如下：</p>
+<p><code>#!/bin/sh</code><br><code>git --work-tree=/home/git/projects/blog --git-dir=/home/git/repos/blog.git checkout -f</code><br>之后退出vim，继续进行用户相关的操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod +x post-receive # 添加可执行权限</span><br><span class="line">exit # 返回到root用户</span><br><span class="line">chown -R git:git &#x2F;home&#x2F;git&#x2F;repos&#x2F;blog.git # 给git用户添加权限</span><br></pre></td></tr></table></figure>
 
-<img src="https://gitee.com/pic_hexo/pic_hexo_001/raw/master/img/龙虾面 (1).jpg" alt="龙虾面 (1)" style="zoom:80%;" />
+<p>这样Git仓库就配好了。在本地试一下能不能把空仓库拉下来：</p>
+<p><code>git clone git@server_ip:/home/git/repos/blog.git</code><br>如果能拉下来，就说明配置成功了。</p>
+<h2 id="本地建立SSH信任关系"><a href="#本地建立SSH信任关系" class="headerlink" title="本地建立SSH信任关系"></a>本地建立SSH信任关系</h2><p>目前每次对git仓库进行操作都需要输入密码，不太方便。但是我们已经配置了SSH，就可以通过建立SSH信任关系来免去输入密码的步骤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~&#x2F;.ssh&#x2F;id_rsa.pub git@server_ip # 建立信任关系</span><br><span class="line">ssh git@server_ip # 试一下能不能登录</span><br></pre></td></tr></table></figure>
 
+
+
+<p>如果不能登录或者还是要输入密码，就说明前面的操作有误，再检查一下吧。</p>
+<h2 id="更改git用户默认的shell"><a href="#更改git用户默认的shell" class="headerlink" title="更改git用户默认的shell"></a>更改git用户默认的shell</h2><p>为了安全起见，这个部署用的git用户最好只能用git clone等操作，所以需要更改它默认的shell：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;shells # 查看 git-shell 是否在登录方式里面</span><br><span class="line">which git-shell # 找到git-shell的路径，记下来</span><br><span class="line">vim &#x2F;etc&#x2F;shells</span><br></pre></td></tr></table></figure>
+<p>然后把刚才记下来的路径添加进去，保存，然后<code>vim /etc/passwd</code>，把<code>git:x:1000:1000::/home/git:/bin/bash</code>修改为<code>git:x:1000:1000:,,,:/home/git:/usr/bin/git-shell</code>。</p>
+<p>这样本地再用ssh应该就没法登录了，只能进行git操作。</p>
+<p>部署上线<br>有了git仓库，就可以部署<code>hexo</code>文件上去了。</p>
+<p>首先改一下<code>_config.yml</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@your_ip:&#x2F;home&#x2F;git&#x2F;repos&#x2F;blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>然后安装<code>hexo-deployer-git</code>，否则没法使用git部署：</p>
+<p><code>sudo npm install --save hexo-deployer-git</code><br>编辑<code>package.json</code>文件，添加部署脚本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;build&quot;: &quot;hexo generate&quot;,</span><br><span class="line">    &quot;clean&quot;: &quot;hexo clean&quot;,</span><br><span class="line">    &quot;deploy&quot;: &quot;hexo clean &amp;&amp; hexo g -d&quot;,</span><br><span class="line">    &quot;server&quot;: &quot;hexo server&quot;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>然后执行<code>npm run deploy</code>就可以把文件部署上去了，出现类似于下面的提示，就说明部署成功。</p>
+<p>配置<code>Nginx</code>反向代理<br>首先需要配置一下域名解析记录，把<code>tutorial.wendev.site</code>也绑定到现在的ip上，以便进行下一步操作。</p>
+<p>前面配置完仓库，也把文件部署上去了，我们把Nginx反向代理也来配置一下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;nginx</span><br><span class="line">cp nginx.conf nginx_backup.conf # 备份配置文件</span><br><span class="line">vim nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>主要是开头的</p>
+<p><code>user root;</code><br>和服务器部分的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.wendev.site;</span><br><span class="line"> </span><br><span class="line">    # Load configuration files for the default server block.</span><br><span class="line">    include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span><br><span class="line"> </span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">    proxy_redirect off;</span><br><span class="line">    proxy_set_header Host $host;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_pass http:&#x2F;&#x2F;localhost:10000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">server &#123;</span><br><span class="line">listen      80;</span><br><span class="line">server_name wendev.site;</span><br><span class="line"> </span><br><span class="line"># Load configuration files for the default server block.</span><br><span class="line">    include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span><br><span class="line"> </span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;localhost:10000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name tutorial.wendev.site;</span><br><span class="line"> </span><br><span class="line">    # Load configuration files for the default server block.</span><br><span class="line">    include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span><br><span class="line"> </span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root &#x2F;home&#x2F;git&#x2F;projects&#x2F;blog;</span><br><span class="line">    index index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">error_page 500 502 503 504 &#x2F;50x.html;</span><br><span class="line">location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">    root html;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就可以把两个不同的域名 <code>www.wendev.site</code>和<code>tutorial.wendev.site</code> 分别绑定到10000端口（已有的个人网站）和新的<code>hexo</code>网站了。</p>
+<h2 id="然后重新加载一下配置："><a href="#然后重新加载一下配置：" class="headerlink" title="然后重新加载一下配置："></a>然后重新加载一下配置：</h2><p><code>nginx -s reload</code><br>访问<code>tutorial.wendev.site</code>、<code>wendev.site</code>和<code>www.wendev.site</code>，发现三个网站都正常，大功告成！<br>————————————————<br>版权声明：本文为CSDN博主「星速云」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/wx_15323880413/article/details/104576799" target="_blank" rel="noopener">https://blog.csdn.net/wx_15323880413/article/details/104576799</a></p>
 
             </div>
             <hr/>
@@ -421,7 +480,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ddns.yingfly.top:4000/2020/05/25/%E9%BE%99%E8%99%BE%E9%9D%A2/">http://ddns.yingfly.top:4000/2020/05/25/%E9%BE%99%E8%99%BE%E9%9D%A2/</a>
+                    <a href="http://ddns.yingfly.top:4000/2020/06/05/%E9%98%BF%E9%87%8C%E4%BA%91%E9%85%8D%E7%BD%AEoss%E9%83%A8%E7%BD%B2hexo%E4%B8%80/">http://ddns.yingfly.top:4000/2020/06/05/%E9%98%BF%E9%87%8C%E4%BA%91%E9%85%8D%E7%BD%AEoss%E9%83%A8%E7%BD%B2hexo%E4%B8%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -459,8 +518,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%99%BE%E6%B1%A4%E9%9D%A2/">
-                                    <span class="chip bg-color">虾汤面</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -891,47 +950,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/05/29/%E8%83%8C%E5%BD%B1/">
+                <a href="/2020/06/05/%E9%98%BF%E9%87%8C%E4%BA%91%E9%85%8D%E7%BD%AEoss%E9%83%A8%E7%BD%B2hexo%E4%B8%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="蹒跚学步">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="阿里云配置oss部署hexo一">
                         
-                        <span class="card-title">蹒跚学步</span>
+                        <span class="card-title">阿里云配置oss部署hexo一</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            小九身体往前倾深一脚，浅一脚内八字左右摇摆清脆的咯咯声招来一片闲散的云手伸向前方空中，不停地抓握摸不到，却又在心中的依赖
-一个喷嚏，如浪掀翻螃蟹一阵阵莫名的笑声虎啸泉涌戛然而止清澈的眸子倒映着一张张被风吹皱了的脸谱左顾右盼后，迷惑中挣扎奋力
+                            学习配置阿里云oss安装hexo。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>5月 29 2020
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>6月 5 2020
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%83%8C%E5%BD%B1/" class="post-category">
-                                    背影
+                            <a href="/categories/aliyun/" class="post-category">
+                                    aliyun
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AE%B6/">
-                        <span class="chip bg-color">家</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -945,55 +1005,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/24/%E6%B8%94%E6%AD%8C%E6%99%9A%E5%94%B1/">
+                <a href="/2020/06/05/%E9%98%BF%E9%87%8C%E4%BA%91%E9%85%8D%E7%BD%AEoss%E9%83%A8%E7%BD%B2hexo%E9%9D%A2%E5%AF%86%E7%99%BB%E9%99%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="农家乐">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="阿里云配置oss部署hexoのaliyun配置免密钥登陆">
                         
-                        <span class="card-title">农家乐</span>
+                        <span class="card-title">阿里云配置oss部署hexoのaliyun配置免密钥登陆</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            农家小乐
-  鹅鹅鹅，  曲项向天歌。  白毛浮绿水，  红掌拨清波。  
-
-鹅语
-  
-  
-
-小鸡进窝
-  
-
-
-鱼鹰看你吃的好专注–专吃小鱼，你的耐心真强
- 
-
-
-绿植–葡萄
-  
-
-
-渔歌晚照
-夕阳余晖
-
-
-
-渔歌晚唱渔歌晚唱泛水来
+                            这是我在配置aliyun Hexo网站出现的问题，查询多个网站终于解决。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>5月 24 2020
+                                <i class="far fa-clock fa-fw icon-date"></i>6月 5 2020
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%86%9C%E5%AE%B6%E4%B9%90/" class="post-category">
-                                    农家乐
+                            <a href="/categories/aliyun/" class="post-category">
+                                    aliyun
                                 </a>
                             
                             
@@ -1003,8 +1039,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%86%9C%E5%AE%B6%E4%B9%90/">
-                        <span class="chip bg-color">农家乐</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
